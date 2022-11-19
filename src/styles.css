@@ -1,0 +1,78 @@
+:root {
+    --fontMain: 'Montserrat', sans-serif;
+    --textColorMain: #fff;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+
+/************************************************MAIN PAGE **************************************/
+
+@keyframes backgroundColor {
+    0% {
+        background-color: #80489C;
+    }
+    50% {
+        background-color: #432C7A;
+    }
+    100% {
+        background-color: #80489C;
+    };
+}
+
+.main-page {
+    animation: backgroundColor 10s infinite;
+    background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.kahoot-title {
+    color: var(--textColorMain);
+    font-family: 'Happy Monkey', cursive;
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+.main-center {
+    background-color: var(--textColorMain);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.3%;
+}
+
+#game-pin {
+    box-sizing: border-box;
+    border: 0.15rem solid rgb(204, 204, 204);
+    border-radius: 5px;
+    font-family: var(--fontMain);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    min-height: 48px;
+    line-height: 2.5rem;
+    outline: none;
+    text-align: center;
+    width: 275px;
+}
+
+#game-pin::placeholder {
+    color: rgb(204, 204, 204);
+    font-weight: 800;
+}
+
+.copyright-text {
+    color: var(--textColorMain);
+    font-size: 1rem;
+    font-family: var(--fontMain);
+    position: absolute;
+    bottom: 0;
+}
