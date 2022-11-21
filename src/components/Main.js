@@ -24,9 +24,9 @@ export default function Main(props) {
         >
           Enter
         </Button>
-            {props.isGameStart.isGamePinValide && props.isGameStart.isGameTrigger ? 
+            {props.checkGamePin.isGamePinValide && props.checkGamePin.isGameTrigger ? 
           <Alert sx={{width: "300px"}} severity="success">Succesfully connected to the Kahoot Game!</Alert>  : null}
-          {!props.isGameStart.isGamePinValide && props.isGameStart.isGameTrigger ?
+          {!props.checkGamePin.isGamePinValide && props.checkGamePin.isGameTrigger ?
             <Alert sx={{width: "300px"}} className="pin-error" severity="error">Please introduce a PIN of 4 numbers!</Alert>  : null
           }
       </div>

@@ -76,3 +76,77 @@
     position: absolute;
     bottom: 0;
 }
+
+
+/*******************************Question Page ***************/
+
+.question-section {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.15rem solid rgb(204, 204, 204);
+}
+
+.question {
+    margin: 0;
+    font-family: var(--fontMain);
+}
+
+.question-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.answer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 15px;
+    margin: 20px;
+}
+
+.answer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    padding-left: 10px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.answer1 {
+    background-color: #c60929;
+}
+
+.answer1:hover {
+    background-color: #eb2134;
+}
+
+.answer2 {
+    background-color: #0542b9;
+}
+
+.answer2:hover {
+    background-color: #1368ce;
+}
+
+.answer3 {
+    background-color: #d89e00;
+}
+
+.answer3:hover {
+    background-color: #ffa602;
+}
+
+.answer4 {
+    background-color: #106b03;
+}
+
+.answer4:hover {
+    background-color: #26890c;
+}
