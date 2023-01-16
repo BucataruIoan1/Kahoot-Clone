@@ -1,8 +1,20 @@
 export default function Answer(props) {
+
+  let answer = "";
+
+
     return (
-        <div className={props.className}>
+        <div onClick={(event) => {
+          answer = event.target.querySelector("h2").innerHTML;
+          setTimeout(() => {
+            props.setUserAnswers((prevAnswer) => {
+            return [...prevAnswer, answer];
+          })
+          }, 1000)
+          
+        }} className={props.className}>
         {props.symbol}
-        <h2>{props.answerText}</h2>
+        <h2 className="asnwer-value">{props.answerText}</h2>
       </div>
     )
 }
