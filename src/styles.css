@@ -80,7 +80,7 @@
 
 /*******************************Question Page ***************/
 
-.question-section {
+.question-section, .question-answered-correct, .question-answered-incorrect {
     height: 15vh;
     display: flex;
     justify-content: center;
@@ -88,16 +88,33 @@
     border-bottom: 0.15rem solid rgb(204, 204, 204);
 }
 
-.question {
-    margin: 0;
-    font-family: var(--fontMain);
+.question-answered-correct {
+    background-color: #66BF39 !important;
 }
 
-.question-image {
+.question-answered-incorrect {
+    background-color: #FF3355 !important;
+}
+
+.question, .answer-validation {
+    margin: 0;
+    font-family: var(--fontMain);
+    text-align: center;
+}
+
+.answer-validation {
+    color: var(--textColorMain);
+}
+
+.question-image-section {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50vh;
+}
+
+.image-question {
+    height: 300px;
 }
 
 .answer-section {
@@ -127,12 +144,22 @@
     background-color: #eb2134;
 }
 
+.answer1-disabled {
+    background-color: #ff99aa;
+    pointer-events: none;
+}
+
 .answer2 {
     background-color: #0542b9;
 }
 
 .answer2:hover {
     background-color: #1368ce;
+}
+
+.answer2-disabled {
+    background-color: #a2d1f2;
+    pointer-events: none;
 }
 
 .answer3 {
@@ -143,6 +170,11 @@
     background-color: #ffa602;
 }
 
+.answer3-disabled {
+    background-color: #ffdd33;
+    pointer-events: none;
+}
+
 .answer4 {
     background-color: #106b03;
 }
@@ -151,7 +183,46 @@
     background-color: #26890c;
 }
 
-.image-question {
-    width: 400px;
-    height: auto;
+.answer4-disabled {
+    background-color: #b2df9c;
+    pointer-events: none;
+}
+
+#correct {
+    background-color: #66BF39;
+}
+
+#incorrect {
+    background-color: #FF3355;
+}
+
+/*************************************************RESULTS STYLE *********************************/
+
+.results-section {
+    animation: backgroundColor 10s infinite;
+    background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 5%;
+    height: 100vh;
+}
+
+.grade, .feedback-quiz {
+    color: var(--textColorMain);
+    font-family: 'Happy Monkey', cursive;
+    font-size: 3.5rem;
+}
+
+.green-text {
+    color: #66BF39;
+}
+
+.red-text {
+    color: #FF3355;
+}
+
+.feedback-quiz {
+    font-size: 1.5rem;
 }

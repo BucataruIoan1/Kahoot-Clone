@@ -1,20 +1,48 @@
 export default function Answer(props) {
-
   let answer = "";
 
+  return (
+    <div
+      className={props.className}
+      id={props.id}
+      onClick={(event) => {
+        props.setAnswer(event.target.innerText);
 
-    return (
-        <div onClick={(event) => {
-          answer = event.target.querySelector("h2").innerHTML;
-          setTimeout(() => {
-            props.setUserAnswers((prevAnswer) => {
+        props.setIsAnswerClicked((prevValue) => {
+          return !prevValue;
+        });
+
+        answer = event.target.innerText;
+        setTimeout(() => {
+          props.setUserAnswers((prevAnswer) => {
             return [...prevAnswer, answer];
-          })
-          }, 1000)
-          
-        }} className={props.className}>
-        {props.symbol}
-        <h2 className="asnwer-value">{props.answerText}</h2>
-      </div>
-    )
+          });
+        }, 5000);
+        setTimeout(() => {
+          props.setIsAnswerClicked((prevValue) => {
+            return !prevValue;
+          });
+        }, 5000);
+
+        setTimeout(() => {
+          props.setAnswer("");
+        }, 5000);
+
+        setTimeout(() => {
+          props.setCorrectOrIncorrect(true);
+        }, 2000);
+
+        setTimeout(() => {
+          props.setCorrectOrIncorrect(false);
+        }, 5000);
+
+        if (props.userAnswers.length >= 9) {
+          props.calculateScore();
+        }
+      }}
+    >
+      {props.symbol}
+      <h2>{props.answerText}</h2>
+    </div>
+  );
 }
